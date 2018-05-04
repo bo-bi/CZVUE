@@ -1,16 +1,16 @@
-// //默认引入
-import Cal from './cal.js';
-// //声明式引入
-import {obj1,obj2} from './cal.js';
-import {obj4} from './cal.js';
+//2:引入Vue
+import Vue from 'vue';
 
-console.log(Cal);
-console.log(obj1);
-console.log(obj2);
-console.log(obj4);
+import App from './app.vue'
 
-//--------------------------------------------------------------------------------
-//全体引入
-import * as allObj from './cal.js';
+//3:创建一个Vue的实例，一般一个项目，大多就是一个vue实例来完成显示
+new Vue({
+    // el: '#app',//目的地
+    // render: 'dom结构'//渲染的内容
 
-console.log(allObj);
+    el: '#app',
+    render: function(creater) {
+        return creater(App);//App包含template、script、style,最终生成DOM结构
+    }
+
+});

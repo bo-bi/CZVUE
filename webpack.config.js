@@ -45,6 +45,11 @@ module.exports = {
                     presets: ['es2015'],//关键字
                     plugins: ['transform-runtime'],//函数
                 }
+            },
+            {
+                //解析vue
+                test: /\.vue$/,
+                loader: 'vue-loader',//vue-template-compiler是内部代码上的依赖
             }
         ]
     },

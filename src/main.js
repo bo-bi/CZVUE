@@ -1,16 +1,15 @@
-//2:引入Vue
+//1.引入Vue
 import Vue from 'vue';
-
-import App from './app.vue'
-
-//3:创建一个Vue的实例，一般一个项目，大多就是一个vue实例来完成显示
+//2.引入app.vue 用他的内容来替换div id="app"
+import App from './app.vue';
+//3.构建Vue实例
 new Vue({
-    // el: '#app',//目的地
-    // render: 'dom结构'//渲染的内容
-
+    //渲染内容的目的地
     el: '#app',
-    render: function(creater) {
-        return creater(App);//App包含template、script、style,最终生成DOM结构
+    //渲染内容
+    render: function(c) { //c只是一个形参，叫什么都可以
+        return c(App);
     }
 
+    //一般来说，key是固定的，值是你设置的（可变的）
 });

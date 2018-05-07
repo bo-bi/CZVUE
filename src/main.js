@@ -2,6 +2,8 @@
 import Vue from 'vue';
 //2.引入app.vue 用他的内容来替换div id="app"
 import App from './app.vue';
+//引入methods和v-on
+import Methods from './methodsAndOn.vue'
 //3.构建Vue实例
 new Vue({
     //渲染内容的目的地
@@ -18,5 +20,6 @@ new Vue({
     //     return c(App);
     // }
 
-    render: c => c(App)
+    // render: c => c(App)//基本指令
+    render: c => c(Methods)//methods和on
 });

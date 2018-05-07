@@ -31,7 +31,7 @@
     "vue": "^2.5.16"
   },
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --open",
+    "dev": "webpack-dev-server --inline --hot --open --port 8085",
     "build": "webpack"
   }
 }

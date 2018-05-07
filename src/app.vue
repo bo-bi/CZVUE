@@ -50,7 +50,6 @@
             }
         }
     }
-    console.log(document.getElementById('val').value);
 </script>
 
 <style scoped>

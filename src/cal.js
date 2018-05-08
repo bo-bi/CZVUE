@@ -10,5 +10,5 @@ export var obj3 = "我是声明式导出3";
 var obj4 = "我是声明式导出4（特殊）"
 
 export {obj4};
-//默认到处
+//默认导出
 export default cal;

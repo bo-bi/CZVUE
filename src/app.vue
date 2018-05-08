@@ -1,62 +1,33 @@
 <template>
     <!--你好 这是错误的，必须有且只能有一个根节点！-->
     <div>
-        <ul>
-            <li v-for="(hero,index) in heros" :key="index" :class="{'A':'red','B':'green','C':'blue','D':'pink'}[hero.score]">
-                {{hero.name}},{{hero.score}}
-                <button @click="del(index)">删除</button>
-            </li>
-        </ul>
-        英雄姓名：<input type="text" v-model="name" />
-        英雄成绩：<input type="text" v-model="score" />
-        <button v-on:click="addHero">添加英雄</button>
+        <!--3.使用组件-->
+        <header-vue></header-vue>
+        <body-vue></body-vue>
+        <footer-vue></footer-vue>
     </div>
 </template>
-B
+
 <script>
+    //2.引入子组件对象
+    import headerVue from './components/header.vue'
+    import bodyVue from './components/body.vue'
+    import footerVue from './components/footer.vue'
     export default {
         data() {
             return {
-               name: '',
-               score: '',
-               heros: [
-                   {
-                       id: 1,
-                       name: '波比',
-                       score: 'A'
-                   },
-                   {
-                       id: 2,
-                       name: '日女',
-                       score: 'B'
-                   },
-                   {
-                       id: 3,
-                       name: '莫干娜',
-                       score: 'C'
-                   },
-                   {
-                       id: 4,
-                       name: '扎克',
-                       score: 'D'
-                   },
-               ],
+
             }
         },
         methods: {
-            addHero() {
-                //获取页面输入的值的时候，你用什么？v-model
-                this.heros.push({
-                        name: this.name,
-                        score: this.score
-                });
-                //添加完 清空input
-                this.name = '';
-                this.score = '';
-            },
-            del(index) {
-                this.heros.splice(index,1);
-            }
+
+        },
+        //1.必须声明
+        components: {
+            //组件名称(在模板中使用)：组件对象
+            headerVue: headerVue,
+            bodyVue: bodyVue,
+            footerVue//两者相同，可以简写为一个
         }
     }
 </script>

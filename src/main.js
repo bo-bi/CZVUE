@@ -4,6 +4,8 @@ import Vue from 'vue';
 import App from './app.vue';
 //引入methods和v-on
 import Methods from './methodsAndOn.vue'
+//引入v-for
+import Vfor from './v-for.vue'
 //3.构建Vue实例
 new Vue({
     //渲染内容的目的地
@@ -21,5 +23,6 @@ new Vue({
     // }
 
     // render: c => c(App)//基本指令
-    render: c => c(Methods)//methods和on
+    // render: c => c(Methods)//methods和on
+    render: c => c(Vfor)//v-for
 });

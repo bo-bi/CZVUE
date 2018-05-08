@@ -2,8 +2,8 @@
     <!--你好 这是错误的，必须有且只能有一个根节点！-->
     <div>
         <!--3.使用子组件-->
-        <header-vue></header-vue>
-        <body-vue></body-vue>
+        <header-vue textone="大"></header-vue>
+        <body-vue v-bind:texttwo="text2"></body-vue>
         <footer-vue></footer-vue>
     </div>
 </template>
@@ -12,7 +12,7 @@
     export default {
         data() {
             return {
-
+                text2: '哈哈哈哈'
             }
         },
         methods: {

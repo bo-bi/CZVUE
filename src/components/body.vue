@@ -1,12 +1,16 @@
 <template>
-    <div>我是中间</div>
+    <div>
+        我是中间
+        {{texttwo}}
+    </div>
 </template>
 
 <script>
     export default {
         data() {
             return {}
-        }
+        },
+        props: ['texttwo']
     }
 </script>
 

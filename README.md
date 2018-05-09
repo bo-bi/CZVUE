@@ -8,4 +8,5 @@
 
 * 子组件向父组件传值（vuebus）
   - 父组件通过 new Vue() 这样的一个对象，来$on('事件名'，fn(prop1,prop2) {})
+  
   - 子组件通过引入vuebus对象，来$emit('事件名',prop1,prop2)

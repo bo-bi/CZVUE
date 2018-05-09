@@ -3,11 +3,10 @@ import Vue from 'vue';
 //2.引入app.vue 用他的内容来替换div id="app"
 import App from './app.vue';
 
-//引入子组件对象
-import subVue from './components/sub.vue';
-
-//声明全局组件
-Vue.component('subVue',subVue);
+//创建全局过滤器
+Vue.filter('myFilter',function(value) {
+    return '我是全局过滤器';
+});
 
 //3.构建Vue实例
 new Vue({

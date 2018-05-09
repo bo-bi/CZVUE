@@ -1,42 +1,41 @@
 <template>
     <!--你好 这是错误的，必须有且只能有一个根节点！-->
     <div>
+        请输入内容 <input type="text" v-model="text" />
+        <br/>
+        显示 {{text | myFilter}}
+        <br/>
+        <!--3.使用子组件-->
         <sub-vue></sub-vue>
-        <button @click="listen">爸爸焦急的听电话</button>
     </div>
 </template>
 
 <script>
-    //引入连接器(电话线)
-    import connect from './connector.js';
+    //2.引入子组件
+    import subVue from './components/sub.vue'
     export default {
         data() {
             return {
-                text2: '哈哈哈哈'
+                text: ''
             }
         },
-        methods: {
-            listen() {
-                console.log(1);
-                connect.$on('phone',function(msg) {
-                    console.log(msg,"msg");
-                });
+        filters: {
+            myFilter(value) { //value 就是--> text
+                //输入的内容帮我做一个反转
+                //转换成数组，数组反转，转化成字符串
+                var array = value.split("");
+                array.reverse();
+                var str = array.join("");
+                return str;
             }
+        },
+        //1.声明组件
+        components: {
+            subVue: subVue
         }
     }
 </script>
 
 <style scoped>
-    .red {
-        background-color: red;
-    }
-    .green {
-        background-color: yellowgreen;
-    }
-    .blue {
-        background-color: skyblue;
-    }
-    .pink {
-        background-color: hotpink;
-    }
+
 </style>

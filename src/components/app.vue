@@ -16,7 +16,7 @@
             <router-link :to="{name: 'music'}">进入音乐2</router-link>
             <router-link :to="{name: 'movie'}">进入电影2</router-link>
             <router-link :to="{name: 'music'}">进入音乐3</router-link>
-            <router-link :to="{name: 'movie'}">进入电影4</router-link>
+            <router-link :to="{name: 'movie'}">进入电影3</router-link>
 
             <!--2.也可以跟路径使用 path更改，这里也需要更改-->
             <router-link to="/GoMovie">我是电影3（跟路径使用）</router-link>

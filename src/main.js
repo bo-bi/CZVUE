@@ -4,9 +4,9 @@ import VueRouter from 'vue-router';
 
 //引入主体
 import App from './components/app.vue';
-//路由切换页面
-import Music from './components/music.vue';
-import Movie from './components/movie.vue';
+//引入首页
+import Home from './components/home.vue';
+
 
 //安装路由插件
 Vue.use(VueRouter); //挂载属性
@@ -17,14 +17,9 @@ let router = new VueRouter({
     routes: [
         {
             //一个个对象
-            name: 'music',
-            path: '/GoMusic',
-            component: Music
+            path: '/home',
+            component: Home
         },
-        {   name: 'movie',
-            path: '/GoMovie1',
-            component: Movie
-        }
     ]
 });
 
@@ -32,6 +27,6 @@ let router = new VueRouter({
 new Vue({
    el: '#app',
     //让vue知道我们的路由规则
-   router,//可以简写为router
+   router: router,//可以简写为router
    render: c=>c(App)
 });

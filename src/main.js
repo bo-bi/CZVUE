@@ -1,23 +1,31 @@
-//1.引入Vue
+//引入一堆
 import Vue from 'vue';
-//2.引入app.vue 用他的内容来替换div id="app"
-import App from './app.vue';
+import VueRouter from 'vue-router';
 
-//引入mint-ui
-import MintUi from 'mint-ui';
-//引入样式
-import 'mint-ui/lib/style.css';
-// 安装插件
-Vue.use(MintUi);
-//use实际操作
-//1.组件库，在内部注册了各种全局组件
-//2.插件， 挂载属性， 为了方便this. 可以使用到其功能
+//引入主体
+import App from './components/app.vue';
+//引入主页
+import Home from './components/home.vue';
 
+//安装路由插件
+Vue.use(VueRouter); //挂载属性
 
-//3.构建Vue实例
+//创建路由对象并配置路由
+let router = new VueRouter({
+    //routes
+    routes: [
+        {
+            //一个个对象
+            path: '/home',
+            component: Home
+        }
+    ]
+});
+
+//new Vue 启动
 new Vue({
-    //渲染内容的目的地
-    el: '#app',
-    //渲染内容
-    render: c => c(App)
+   el: '#app',
+    //让vue知道我们的路由规则
+   router: router,//可以简写为router
+   render: c=>c(App)
 });

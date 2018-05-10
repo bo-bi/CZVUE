@@ -1,4 +1,4 @@
-* 通过<router-link></router-link>跳转页面传递参数
+* 通过`<router-link></router-link>`跳转页面传递参数
   - #details/?id=1(字符串传递)
     + query
     + 路由配置中path不变

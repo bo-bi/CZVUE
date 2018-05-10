@@ -4,7 +4,8 @@
   "description": "",
   "main": "webpack属性配置.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --inline --hot --open --port 8085",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -28,10 +29,7 @@
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
+    "mint-ui": "^2.2.13",
     "vue": "^2.5.16"
-  },
-  "scripts": {
-    "dev": "webpack-dev-server --inline --hot --open --port 8085",
-    "build": "webpack"
   }
 }

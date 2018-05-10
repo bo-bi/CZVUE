@@ -1,14 +1,10 @@
-* 通过refs操作DOM
-    - 获取对象
-         + 可以获取原生DOM
-         + 也可以获取组件对象
-    - 父子组件可以互相操作各自DOM
-         + 父组件操作子组件的DOM  this.$refs.sub.$el
-         + 子组件操作父组件的DOM  this.$parent.$refs.myDiv
-    - 组件自身下有很多属性($refs、$el、$parent等，这里有很多未用到)
-         + this 自身是组件
-         + this.$refs.sub 子组件
-    
- * 生命周期中的两个事件
-    - created 完成数据的初始化，但是DOM未生成
-    - mounted 数据装载在DOM上后，将数据渲染到DOM上，DOM已经生成
+* mint-ui
+  - 饿了么出品，PC端: element-ui,移动端: mint-ui
+  - 引入mint-ui
+    import MintUi from 'mint-ui';
+    引入样式
+    import 'mint-ui/lib/style.css';
+  - 注意:
+        - 如果是全部安装的方式
+           + 1.在template中可以直接使用组件标签
+           + 2.针对这种用法： Toast('提示声明'); 则需要在script中声明，也就是说按需引入

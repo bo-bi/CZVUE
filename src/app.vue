@@ -1,50 +1,58 @@
 <template>
     <!--你好 这是错误的，必须有且只能有一个根节点！-->
     <div>
-        <!--3.使用子组件-->
-        <sub-vue ref="sub"></sub-vue>
+        <mt-header title="多个按钮">
+            <mt-button icon="back">返回</mt-button>
+            <mt-button @click="handleClose">关闭</mt-button>
+            <mt-button icon="more" slot="right"></mt-button>
+        </mt-header>
 
-        <div ref="myDiv">
-            {{text}}
-        </div>
+        <mt-switch v-model="value"></mt-switch>
+
+
+        <mt-swipe :auto="4000">
+            <mt-swipe-item>
+                <img src="https://img1.360buyimg.com/pop/jfs/t19663/176/2396966722/71035/3eba1e42/5af167cfN1f560831.jpg" />
+            </mt-swipe-item>
+            <mt-swipe-item>
+                <img src="https://m.360buyimg.com/babel/jfs/t18943/254/2183667718/86633/170270c/5aec3053Nb7a09233.jpg" />
+            </mt-swipe-item>
+            <mt-swipe-item>
+                <img src="https://m.360buyimg.com/babel/jfs/t16702/11/2270576525/86087/e39e432f/5aead7acN200f8ded.jpg" />
+            </mt-swipe-item>
+        </mt-swipe>
+
+        <button @click="showToast">显示弹出框</button>
     </div>
 </template>
 
 <script>
-    //2.引入子组件
-    import subVue from './components/sub.vue'
+    //在js部分所有变量都是模块作用域
+    //如果需要使用就必须引入
+    import { Toast } from 'mint-ui';
     export default {
         data() {
             return {
-                text: '哈哈哈哈'
+                value: false
             }
         },
-        //1.声明组件
-        components: {
-            subVue: subVue
-        },
-        //组件创建后， 数据已经完成初始化， 但是DOM还未生成
-        created() { // 事件的处理函数(created)
-            console.log("created:",this.$refs.myDiv);//获取不到
-        },
-        //数据装载DOM上后， 各种数据已经就位， 将数据渲染到DOM上，DOM已经生成
-        mounted() {
-            // console.log("mounted:",this.$refs.myDiv);
-            console.log("this:",this);
-            console.log("sub:",this.$refs.sub.$el);
+        methods: {
+            handleClose() {
 
-            //获取组件对象，并获取到其的DOM对象(父组件可以操作子组件的DOM)
-            this.$refs.sub.$el.innerHTML = '父组件操作子组件的DOM';
-
-            // 涉及DOM类的操作
-            // this.$refs.myDiv.innerHTML = '操作DOM';
-
-            //涉及到数据的操作
-            this.text = '更改数据';
+            },
+            showToast() {
+                Toast('提示信息');
+            }
         }
     }
 </script>
 
 <style scoped>
-
+    .mint-swipe {
+        height: 200px;
+    }
+    .mint-swipe-item>img {
+        width: 100%;
+        height: 100%;
+    }
 </style>

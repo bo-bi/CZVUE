@@ -4,6 +4,7 @@
     import MintUi from 'mint-ui';
     引入样式
     import 'mint-ui/lib/style.css';
+  - Vue.use(MintUi); use的使用
   - 注意:
         - 如果是全部安装的方式
            + 1.在template中可以直接使用组件标签

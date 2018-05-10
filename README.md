@@ -1,1 +1,1 @@
-* vue-router使用步骤
+* <router-link></router-link>结合name进行渲染，更改路径不会影响

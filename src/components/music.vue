@@ -1,6 +1,6 @@
 <template>
     <div>
-        我是主页
+        我是音乐
     </div>
 </template>
 

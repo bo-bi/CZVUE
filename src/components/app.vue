@@ -1,66 +1,32 @@
 <template>
     <div>
-        <div class="h">头部</div>
-        <!-- 留坑， 非常重要！ -->
-        <router-view class="b"></router-view>
-        <div class="f">底部</div>
-
-        <button @click="goMusic">跳转到音乐</button>
-        <br/>
-        <button @click="testQuery">测试编程导航传递参数[query]</button>
-        <br/>
-        <button @click="testParams">测试编程导航传递参数[params]</button>
+        <div class="header">头部</div>
+        <router-view class="main"></router-view>
+        <div class="footer">底部</div>
     </div>
 </template>
 
 <script>
     export default {
         data() {
-            return {}
-        },
-        methods: {
-            goMusic() {
-                this.$router.push('/music');
-            },
-            testQuery() {
-                //查询字符串的方式   /mousic?id=1&name=2
-                this.$router.push({
-                   name: 'music',
-                   query: {
-                       id: 1,
-                       name: 2
-                   },
-                   params: {
-                       a: 3,
-                       b: 4
-                   }
-                });
-            },
-            testParams() {
-                //path 方式   /music/1/2 (有params,必须要更改路由path)
-                this.$router.push({
-                   name: 'movie',
-                   params: {
-                       id: 1,
-                       name: 2
-                   }
-                });
+            return {
+
             }
         }
     }
 </script>
 
 <style scoped>
-    .h {
+    .header {
         height: 100px;
-        background-color: yellowgreen;
+        background-color: pink;
     }
-    .b {
+    .main {
         height: 100px;
         background-color: skyblue;
     }
-    .f {
+    .footer {
         height: 100px;
-        background-color: hotpink;
+        background-color: yellowgreen;
     }
 </style>

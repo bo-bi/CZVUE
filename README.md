@@ -1,5 +1,5 @@
 * 基于路由，页面跳转的两种方式
-  - 路由跳转:  <router-link></router-link>,
+  - 路由跳转:  `<router-link></router-link>`,
   - 编程导航:  写点击事件，点击进行跳转  this.$router.push()
 * this.$router.go(-1)  根据浏览器记录，浏览器记录必须有才行
   - 前进:1

@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .h,.b,.f {
+            height: 100px;
+        }
+        .h {
+            background-color: yellowgreen;
+        }
+        .b {
+            background-color: skyblue;
+        }
+        .f {
+            background-color: hotpink;
+        }
+    </style>
 </head>
 <body>
+    <div class="h">我是头部</div>
+    <div class="b" id="content"></div>
+    <div class="f">我是底部</div>
 
+    <script>
+        //1：监视锚点值的改变
+        window.addEventListener('hashchange',function() {
+            var text = '';
+            switch(window.location.hash) {
+                case '#/music':
+                    text = '各种音乐的数据';
+                    break;
+                case '#/movie':
+                    text = '各种电影的数据';
+                    break;
+            }
+            //2：调用函数
+            document.getElementById('content').innerHTML = text;
+        });
+    </script>
 </body>
 </html>

@@ -1,8 +1,13 @@
 <template>
     <div>
-        <div class="header">头部</div>
-        <router-view class="main"></router-view>
-        <div class="footer">底部</div>
+        <div>我是头部</div>
+        <hr/>
+            <!--留坑 非常重要 不同的坑 坑名-->
+            <router-view name="header"></router-view>
+            <router-view></router-view>
+            <router-view name="footer"></router-view>
+        <hr/>
+        <div>我是底部</div>
     </div>
 </template>
 
@@ -17,16 +22,5 @@
 </script>
 
 <style scoped>
-    .header {
-        height: 100px;
-        background-color: pink;
-    }
-    .main {
-        height: 100px;
-        background-color: skyblue;
-    }
-    .footer {
-        height: 100px;
-        background-color: yellowgreen;
-    }
+
 </style>

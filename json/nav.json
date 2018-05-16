@@ -1,0 +1,46 @@
+{
+  "state": 0,
+  "stateInfo": null,
+  "resInfo": [
+    {
+      "id": 2,
+      "icon": "http://test2.duia.com/duiaClass-static/images/nav/nav1.png",
+      "title": "会计学院"
+    },
+    {
+      "id": 12,
+      "icon": "http://test2.duia.com/duiaClass-static/images/nav/nav2.png",
+      "title": "教师学院"
+    },
+    {
+      "id": 8,
+      "icon": "http://test2.duia.com/duiaClass-static/images/nav/nav3.png",
+      "title": "IT技能学院"
+    },
+    {
+      "id": 14,
+      "icon": "http://test2.duia.com/duiaClass-static/images/nav/nav4.png",
+      "title": "公务员学院"
+    },
+    {
+      "id": 13,
+      "icon": "http://test2.duia.com/duiaClass-static/images/nav/nav5.png",
+      "title": "英语学院"
+    },
+    {
+      "id": 16,
+      "icon": "http://test2.duia.com/duiaClass-static/images/nav/nav6.png",
+      "title": "行政学院"
+    },
+    {
+      "id": 9,
+      "icon": "http://test2.duia.com/duiaClass-static/images/nav/nav7.png",
+      "title": "金融学院"
+    },
+    {
+      "id": 0,
+      "icon": "http://test2.duia.com/duiaClass-static/images/nav/nav8.png",
+      "title": "全部分类"
+    }
+  ]
+}

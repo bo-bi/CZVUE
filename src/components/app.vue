@@ -1,9 +1,11 @@
 <template>
     <div>
-        <!--<input type="text" v-model="text"/>-->
-        <!--{{text}}-->
-
-        <button @click="change">改变值</button>
+        单价:<input type="text" v-model="price" />
+        件数:<input type="text" v-model="num" />
+        折扣:<input type="text" v-model="rate" />
+        {{sum}}
+        <hr/>
+        {{sum2.commodity}}---{{sum2.realyPrice}}
     </div>
 </template>
 
@@ -12,34 +14,21 @@
     export default {
         data() {
             return {
-                text: '456',
-                person: [
-                    {name: 'jack'},
-                    {name: 'rose'}
-                ]
+                price: 0,
+                num: 0,
+                rate: 0
             }
         },
-        methods: {
-            change() {
-                // this.text = '123';
-                this.person[1].name = 'mick';
-            }
-        },
-        watch: {
-            //基本数据类型
-            text: function(newV,oldV) {
-                console.log('text值发生了改变');
-                console.log(newV);
-                console.log(oldV);
+        computed: {
+            sum() {
+                return this.price * this.num * (this.rate/10);
             },
-            //复杂数据类型(数组、对象)
-            person: {
-                handler: function (newV, oldV) {
-                    console.log("数组的值发生了变化");
-                    console.log(newV);
-                    console.log(oldV);
-                },
-                deep: true
+            sum2() {
+                //如果当函数内涉及到this.相关属性发生改变以后触发，并返回一个值(可以是对象)
+                return {
+                    commodity: '渴望猫粮',
+                    realyPrice: this.price * this.num * (this.rate/10)
+                }
             }
         }
     }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack属性配置.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "webpack-dev-server --inline --open --port 9999"
   },
   "keywords": [],
   "author": "",

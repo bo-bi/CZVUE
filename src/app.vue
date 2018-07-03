@@ -22,6 +22,11 @@
                     console.log(msg,"msg");
                 });
             }
+        },
+        created() {
+            connect.$on('phone',msg => {
+                console.log(msg,"msg");
+            })
         }
     }
 </script>

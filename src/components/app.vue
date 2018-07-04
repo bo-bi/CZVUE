@@ -4,6 +4,8 @@
         <!--{{text}}-->
 
         <button @click="change">改变值</button>
+        <br>
+        obj.status: {{obj.status}}
     </div>
 </template>
 
@@ -16,13 +18,17 @@
                 person: [
                     {name: 'jack'},
                     {name: 'rose'}
-                ]
+                ],
+                obj: {
+                    status: 1
+                }
             }
         },
         methods: {
             change() {
                 // this.text = '123';
                 this.person[1].name = 'mick';
+                // this.obj.status = 2;
             }
         },
         watch: {
@@ -40,7 +46,12 @@
                     console.log(oldV);
                 },
                 deep: true
-            }
+            },
+            'obj.status'(newV,oldV) {
+                console.log("对象的值发生了变化");
+                console.log(newV);
+                console.log(oldV);
+            },
         }
     }
 </script>

@@ -1,39 +1,66 @@
 <template>
-    <div>
-        单价:<input type="text" v-model="price" />
-        件数:<input type="text" v-model="num" />
-        折扣:<input type="text" v-model="rate" />
-        {{sum}}
-        <hr/>
-        {{sum2.commodity}}---{{sum2.realyPrice}}
+  <div>
+    <div :style="{ 'fontSize': postFontSize + 'px' }">
+      <blog-post
+        v-for="(post, index) in postList"
+        :key="index"
+        :post="post"
+        @enlarge-text="largen"></blog-post>
+        <!-- 2. 父组件监听到，执行对应名字的自定义事件 -->
     </div>
+  </div>
 </template>
 
 <script>
+  import BlogPost from './BlogPost.vue'
+  import VueBus from './VueBus.js';
+  export default {
+    data() {
+      return {
+        postFontSize: 12,
+        postList: [
+          {
+            content: '在《快乐大本营》的下期预告中，小吴和王境泽两人一起现身，上演“真香男孩”和“发际线男孩”世纪同框的画面。顿时，小吴和王境泽世纪同框的话题迅速占领热搜榜。'
+          },
+          {
+            content: '在《快乐大本营》的下期预告中，小吴和王境泽两人一起现身，上演“真香男孩”和“发际线男孩”世纪同框的画面。顿时，小吴和王境泽世纪同框的话题迅速占领热搜榜。'
+          },
+          {
+            content: '在《快乐大本营》的下期预告中，小吴和王境泽两人一起现身，上演“真香男孩”和“发际线男孩”世纪同框的画面。顿时，小吴和王境泽世纪同框的话题迅速占领热搜榜。'
+          }
+        ]
 
-    export default {
-        data() {
-            return {
-                price: 0,
-                num: 0,
-                rate: 0
-            }
-        },
-        computed: {
-            sum() {
-                return this.price * this.num * (this.rate/10);
-            },
-            sum2() {
-                //如果当函数内涉及到this.相关属性发生改变以后触发，并返回一个值(可以是对象)
-                return {
-                    commodity: '渴望猫粮',
-                    realyPrice: this.price * this.num * (this.rate/10)
-                }
-            }
+      }
+    },
+    components: {
+      BlogPost: BlogPost
+    },
+
+    created() {
+      // 通过vuebus
+      VueBus.$on('largen', (data)=> {
+        console.log(data, 'data');
+        if(data) {
+          this.postFontSize += 0.1;
         }
+      });
+    },
+
+    methods: {
+      // // 执行自定义事件
+      // largen () {
+      //   this.postFontSize += 0.1;
+      // },
+
+      // 接收自定义事件抛出的值
+      largen (number) {
+        this.postFontSize += number;
+      }
     }
+
+  }
 </script>
 
-<style scoped>
+<style>
 
 </style>

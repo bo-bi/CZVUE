@@ -2,9 +2,10 @@
     <!--你好 这是错误的，必须有且只能有一个根节点！-->
     <div>
         <!--3.使用组件-->
-        <header-vue></header-vue>
-        <body-vue></body-vue>
-        <footer-vue></footer-vue>
+        我是父亲 {{ msg }}
+        <header-vue :msg.sync="msg"></header-vue>
+        <!--<body-vue></body-vue>-->
+        <!--<footer-vue></footer-vue>-->
     </div>
 </template>
 
@@ -16,7 +17,7 @@
     export default {
         data() {
             return {
-
+              msg: '我是父组件中的信息'
             }
         },
         methods: {

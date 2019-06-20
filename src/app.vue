@@ -7,7 +7,7 @@
         输入：<input type="text" v-model="text"/>
         <!--列表-->
         <ul>
-            <li v-for="person in list">{{person.name}}</li>
+            <li v-for="(person, index) in list" :key="index">{{person.name}}</li>
         </ul>
     </div>
     <!--<div>-->

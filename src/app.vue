@@ -40,7 +40,7 @@
         <br />
         复杂情况，通过遍历，根据当前对象的成绩，匹配成绩和样式的清单对象，用成绩做key，取对象的value，最终返回字符串做样式名
         <ul>
-            <li v-for="stu in stus">
+            <li v-for="(stu, index) in stus" :key="index">
                 <span :class="{'A':'red','B':'green'}[stu.score]">name:{{stu.name}}    score:{{stu.score}}</span>
             </li>
         </ul>
@@ -49,7 +49,10 @@
         <br />
         <br />
         <ul>
-            <li v-for="one in fruit" :class="{'bannana':'yellow','apple':'red','pineapple':'green'}[one.name]">
+            <li
+                v-for="(one, index) in fruit"
+                :key="index"
+                :class="{'bannana':'yellow','apple':'red','pineapple':'green'}[one.name]">
                   {{one.name}}
             </li>
         </ul>

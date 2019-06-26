@@ -24,5 +24,5 @@ new Vue({
 
     // render: c => c(App)//基本指令
     // render: c => c(Methods)//methods和on
-    render: c => c(Vfor)//v-for
+    render: c => c(App)//v-for
 });

@@ -2,10 +2,6 @@
 import Vue from 'vue';
 //2.引入app.vue 用他的内容来替换div id="app"
 import App from './app.vue';
-//引入methods和v-on
-import Methods from './methodsAndOn.vue'
-//引入v-for
-import Vfor from './v-for.vue'
 //3.构建Vue实例
 new Vue({
     //渲染内容的目的地

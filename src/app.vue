@@ -1,7 +1,7 @@
 <template>
     <div>
-        <p ref="p">{{ msg }}</p>
-        <button @click="changeValue">更改值</button>
+        <p>{{ person.name }}</p>
+        <button @click="set">增加响应式属性</button>
     </div>
 </template>
 
@@ -12,16 +12,16 @@
         data() {
             return {
                 msg: '未更新',
+                person: {}
             }
         },
         methods: {
-            changeValue() {
-                this.msg = '已更新';
-                // 这里查看实际的文本(this.$refs.p.innerHTML),并不是查看data(this.person.name)
-                console.log(this.$refs.p.innerHTML); // 未更新
-                this.$nextTick( () => {
-                    console.log(this.$refs.p.innerHTML); // 已更新
-                })
+            set() {
+                // 不可以向根级响应式属性, 如this.$data不可以
+                // 只能向里面的属性进行添加
+                // this.$set(this.$data, 'name', '张三'); 不可以
+                this.$set(this.person, 'name', '张三');
+                // 同 Vue.set
             }
         }
     }

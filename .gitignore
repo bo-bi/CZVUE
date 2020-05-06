@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This file is created with the assistance of https://www.gitignore.io
 
 # Logs
@@ -20,3 +21,8 @@ audio
 .settings
 .swp
 .history
+=======
+node_modules/
+*.xml
+.history/
+>>>>>>> bcaa588b8ffe6cd824ec292dfef459dd55f20dda

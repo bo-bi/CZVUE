@@ -1,0 +1,22 @@
+# This file is created with the assistance of https://www.gitignore.io
+
+# Logs
+logs
+log
+*.log
+*.log.*
+
+# Dependency directory
+node_modules
+bower_components
+
+# Distribution
+dist
+audio
+
+# Environment configuration file
+.DS_Store
+.idea
+.settings
+.swp
+.history
